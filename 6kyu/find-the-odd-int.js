@@ -25,6 +25,22 @@ function findOdd(A) {
   return Number(n)
   }
 
+//            solution
+
+function findOdd(A) {
+  let obj = {}
+  A.forEach(a => {
+    if(!obj[a]){
+      obj[a] = 1
+    }else{
+      obj[a] += 1
+    }
+  })
+  for(let prop in obj){
+      if(obj[prop] % 2 != 0) return Number(prop)
+  }
+}
+
   //            solution
 
   function findOdd(A) {
