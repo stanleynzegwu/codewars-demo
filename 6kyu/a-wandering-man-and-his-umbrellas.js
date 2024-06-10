@@ -52,4 +52,4 @@ const requiredUmbrellas = travels => {
       
       return {...acc, [prevLoc]: Math.max(acc[prevLoc], locations[prevLoc])};
     }, {...locations});
-  }
+}
