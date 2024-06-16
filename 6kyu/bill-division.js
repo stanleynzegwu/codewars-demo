@@ -50,13 +50,17 @@
 //                                  Solution
 
 function bonAppetit(bill, k, b) {
-    // Write your code here
-    //determine Anna'a Bill
-    const annasItems = [...bill.slice(0,k),...bill.slice(k+1)]
-    const annasBill = annasItems.reduce((acc,c) => acc + c,0)/2
-    //check if she was over charged
+    // Calculate the total cost of the items Anna ate
+    const totalBill = bill.reduce((acc, item, index) => {
+        if (index !== k) acc += item;
+        return acc;
+    }, 0);
+
+    // Calculate Anna's share
+    const annasBill = totalBill / 2;
+    // Determine if Anna was overcharged
     const diff = b - annasBill
-    //return
+    // Return the result
     return diff > 0 ? diff : 'Bon Appetit'
 
 }
