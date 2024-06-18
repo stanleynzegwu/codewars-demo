@@ -18,7 +18,7 @@
 
 function pageCount(n, p) {
     // Write your code here
-    const fromFirstPage = Math.floor(p/2)
-    const fromLastPage = Math.floor( (n - p)/2 )
-    return Math.min(fromFirstPage,fromLastPage)
+    return Math.min(Math.floor(p/2), Math.floor(n/2)-Math.floor(p/2))
 }
+
+console.log(pageCount(6,5))
