@@ -13,5 +13,5 @@ function persistence(num) {
   
   //Recursive Case
   const prods = String(num).split('').reduce((acc,c) => acc * c,1)
-  return 1 + persistence(prods)
+  return 1 + persistence(prods) 
 }
