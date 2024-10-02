@@ -24,11 +24,29 @@
 
 //                  solution
 
+// function saveThePrisoner(n, m, s) {
+//     // Write your code here
+//     let current = s
+//     for(let i = 1; i < m; i++){
+//         current <= n - 1 ? current++ : current = 1
+//     }
+//     return current
+// }
+
+// OPTIMAL APPROACH
 function saveThePrisoner(n, m, s) {
-    // Write your code here
-    let current = s
-    for(let i = 1; i < m; i++){
-        current <= n - 1 ? current++ : current = 1
-    }
-    return current
+    let result = (s - 1 + m) % n;
+    return result === 0 ? n : result;
 }
+
+//Optimal Approach Reasoning
+// There is a more efficient mathematical approach to this problem. Instead of simulating the candy distribution one by one, you can compute the final position of the last sweet using modular arithmetic.
+
+// Here’s the reasoning:
+
+// The distribution starts at seat s.
+// After distributing all m sweets, the position where the last sweet will be given is (s - 1 + m) % n.
+// s - 1: Because you start distributing from chair s, but the 0th sweet is already on seat s.
+// + m: The number of sweets being distributed.
+// % n: To wrap around the circular table after reaching the last seat (if necessary).
+// Finally, add 1 to the result to account for 1-based indexing (since seats are numbered from 1 to n, not 0 to n-1).
