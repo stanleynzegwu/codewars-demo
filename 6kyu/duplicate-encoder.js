@@ -32,3 +32,22 @@ function duplicateEncode(word){
       })
       .join('');
   }
+
+  //      Optimal Solution
+
+  function duplicateEncode(word){
+    word = word.toLowerCase()
+    let charCount = {}
+    
+    for(let letter of word){
+      charCount[letter] = (charCount[letter] || 0) + 1
+    }
+    
+      // Second pass: build the result string based on frequency count
+    let newWord = '';
+    for (let letter of word) {
+      newWord += charCount[letter] === 1 ? '(' : ')';
+    }
+  
+    return newWord;
+  }
